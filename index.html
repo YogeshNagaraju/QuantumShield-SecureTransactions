@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuantumShield - User & Transaction Registration</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/face-api.js/1.3.0/face-api.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>QuantumShield - Secure Registration</h2>
+        
+        <!-- User Registration Form -->
+        <form id="user-form">
+            <h3>User Details</h3>
+            <input type="text" id="name" placeholder="Enter your name" required>
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <input type="password" id="password" placeholder="Enter password" required>
+            
+            <h3>Transaction Details</h3>
+            <input type="text" id="transaction_id" placeholder="Enter Transaction ID" required>
+            <input type="text" id="date" placeholder="Enter Date (YYYY-MM-DD)" required>
+            <input type="text" id="account_number" placeholder="Enter Account Number" required>
+            <input type="text" id="transaction_type" placeholder="Enter Transaction Type (CREDIT/DEBIT)" required>
+            <input type="number" id="amount" placeholder="Enter transaction amount" required>
+
+            <button type="button" onclick="startFaceRegistration()">Register & Verify Face</button>
+        </form>
+
+        <!-- Webcam Video Feed -->
+        <div id="video-container" class="hidden">
+            <video id="video" autoplay></video>
+            <button id="capture" onclick="captureFace()">Capture Face</button>
+        </div>
+
+        <!-- Display Captured Face -->
+        <div id="captured-face-container" class="hidden">
+            <h3>Captured Face</h3>
+            <img id="captured-face" alt="Captured Face" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+        </div>
+
+        <h3 id="result"></h3> <!-- Risk prediction result display -->
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
